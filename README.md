@@ -1,5 +1,5 @@
 # invoiceDetector
-Doing test with OCR 
+Detect the text in PNG and PDF files with OCR 
 
 # How to run it : 
 
@@ -23,4 +23,4 @@ pip install -r requirements.txt
 
 ## 3 - Run it ! :
 
-python3 test.py 
+python3 detector.py 
