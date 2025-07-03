@@ -1,4 +1,5 @@
 paddleocr
 paddlepaddle
 matplotlib
-setuptools
+opencv-python
+
