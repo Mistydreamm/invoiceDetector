@@ -11,24 +11,27 @@ import os.path
 import tkinter as tk
 from tkinter import filedialog
 
-def pngDetector(image_path) :
+def write_results_to_file(texts, filename="ocr_results.txt"):
+    with open(filename, "w", encoding="utf-8") as f:
+        for line in texts:
+            f.write(line + "\n")
+    print(f"\nRésultats enregistrés dans '{filename}'")
 
+def pngDetector(image_path):
     ocr = PaddleOCR(use_angle_cls=True, lang="fr")
     img = cv2.imread(image_path)
 
     plt.figure()
     plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))  # Convert BGR to RGB for correct color display
+    plt.title("Aperçu de l'image PNG")
+    plt.axis("off")
     plt.show()
 
     result = ocr.predict(img)
+    texts = result[0]['rec_texts']
+    write_results_to_file(texts)
 
-    # Print all recognized texts
-    for text in result[0]['rec_texts']:
-        print(text)
-
-def pdfDetector(pdf_path) : 
-
-
+def pdfDetector(pdf_path):
     ocr = PaddleOCR(use_angle_cls=True, lang="fr")
 
     doc = fitz.open(pdf_path)
@@ -44,28 +47,22 @@ def pdfDetector(pdf_path) :
     plt.figure(figsize=(10, 12))
     plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
     plt.axis("off")
-    plt.title("Aperçu de la première page")
+    plt.title("Aperçu de la première page PDF")
     plt.show()
 
     result = ocr.predict(img)
+    texts = result[0]['rec_texts']
+    write_results_to_file(texts)
 
-    for line in result[0]['rec_texts']:
-        print(line)
-
-
-def pngOrPdf(filepath) : 
-    ext = os.path.splitext(filepath)[1]
-    print(ext)
-    if ext == ".pdf" : 
+def pngOrPdf(filepath):
+    ext = os.path.splitext(filepath)[1].lower()
+    print(f"Extension détectée : {ext}")
+    if ext == ".pdf":
         pdfDetector(filepath)
-        
-    elif ext == ".png" : 
+    elif ext == ".png":
         pngDetector(filepath)
-    
     else:
-        raise NameError("L'extension du fichier n'est pas supporté par le programme")
-    
-
+        raise NameError("L'extension du fichier n'est pas supportée par le programme")
 
 def chooseFile():
     root = tk.Tk()
@@ -74,16 +71,11 @@ def chooseFile():
     if chemin:
         nom_fichier = os.path.basename(chemin)
         print(f"Fichier sélectionné : {nom_fichier}")
-        return nom_fichier
+        return chemin  # Retourner le chemin complet ici
     else:
         print("Aucun fichier sélectionné.")
         return None
-        
-        
-filepath = chooseFile()
 
-pngOrPdf(filepath)
-        
-        
-        
-        
+filepath = chooseFile()
+if filepath:
+    pngOrPdf(filepath)

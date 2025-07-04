@@ -1,0 +1,74 @@
+Fichier sélectionné : imageTest.png
+.png
+Mon entreprise
+Facture
+Numéro de client :
+12345
+Numéro de facture :
+12
+30 Avenue Victor Hugo
+contact@monentreprise.fr
+Date de facture :
+JJI/MM/AAAA
+75001
+www.monentreprise.fr
+Date de livraison :
+JJ/MM/AAAA
+06 10 20 30 40
+Échéance de paiement: JJ/MM/AAA
+Facturer à :
+Expédier à :
+55 Rue de la Fontaine
+55 Rue de la Fontaine
+75005
+75005
+06 20 30 40 50
+06 20 30 40 50
+contact@monclient.fr
+contact@monclient.fr
+Description
+Quantité
+Prix unitaire HT
+Prix total HT
+Produit 1
+2
+€5.00
+€10.00
+Produit 2
+3
+€15.00
+€45.00
+Produit 3
+5
+€3.50
+€17.50
+Produit 4
+1
+€30.00
+€30.00
+€0.00
+€0.00
+€0.00
+€0.00
+Remarques et instructions de paiement :
+SOUS-TOTAL :
+€102.50
+À inclure ici:
+L'indemnité forfaitaire pour frais de
+REMISE :
+€0.00
+recouvrement en cas de retard de paiement
+Numéro de compte bancaire, BIC, IBAN...
+SOUS-TOTAL MOINS LES REMISES :
+€102.50
+TAUX DE TVA :
+20.00%
+TOTAL TTC :
+€123.00
+EXPÉDITION ET MANUTENTION :
+€12.00
+SOMME FINALE À PAYER :
+€135.00
+Nous apprécions votre clientèle.
+Si vous-avez des questions sur cette facture, n'hésitez-pas à nous contacter.
+Numéro SIRET : 111.222.333 12345 RCS Paris | Code APE : 58.11 | Numéro TVA Intracommunitaire : FR 12 111.222.333
